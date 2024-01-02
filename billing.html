@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+       <div class="menu">
+        <ul>
+            <li><a href=""><img src="img/new buyer.png" alt=""></a></li>
+            <li><a href=""><img src="img/Update buyer.png" alt=""></a></li>
+            <li><a href=""><img src="img/buyer Details.png" alt=""></a></li>
+            <li><a href=""><img src="img/delete buyer.png" alt=""></a></li>
+            <li><a href=""><img src="img/new product.png" alt=""></a></li>
+            <li><a href=""><img src="img/update product.png" alt=""></a></li>
+            <li><a href=""><img src="img/details product.png" alt=""></a></li>
+            <li><a href=""><img src="img/delete product.png" alt=""></a></li>
+            <li><a href=""><img src="img/billing.png" alt=""></a></li>
+            <li><a href=""><img src="img/logout.png" alt=""></a></li>
+        </ul>
+       </div>
+
+       <div class="form-wrapper form-wrapper-bill">
+        <div class="title">
+            <img src="img/Billing ani.gif" alt=""> 
+        </div>
+        <!-- buyer add -->
+        <div class="buyer-details">
+            <h4>
+                <span style="text-align: left !important;">Buyer Details</span>
+                <span style="float: right;padding-right: 10px;">Date: 30/42/25; Time:19;22</span>
+            </h4>
+            <form action="">
+                <label for="">Name:</label><input type="text">
+                <label for="">Contact No:</label><input type="text">
+                <label for="">Email:</label><input type="text">
+                <label for="">Address:</label><input type="text">
+            </form>
+            
+        </div>
+        
+        <div class="empty-border"></div>
+        <div class="product-details">
+            <h3 style="text-align: left;">Products</h3>
+             <!-- search form -->
+            <form action="">
+                <label for="">Product ID</label> <input type="text">
+                <label for="">Name</label> <input type="text">
+                <label for="">Rate</label> <input type="text">
+                <label for="">Quantity</label> <input type="text">
+                <input type="submit" value="Add">
+            </form>
+        </div>
+       
+
+        <div class="empty-border"></div>
+        <div class="queue-list">
+            <table>
+                <tr>
+                    <th>SL</th>
+                    <th>Name</th>
+                    <th>Rate</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>Seven Up</td>
+                    <td>120</td>
+                    <td>3 </td>
+                    <td>360</td>
+                    <td>
+                        <a href="" class="dlt-btn">Remove</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="button-queue">
+            <label for="">Total Amount:</label><input type="text" name="" id="">
+            <label for="">Pay Amount:</label><input type="text" name="" id="">
+            <label for="">Return Amount:</label><input type="text" name="" id="">
+            
+            <div class="empty-border"></div>
+            <a href="" class="save-btn">Save</a>
+            <a href="" class="reset-btn">Reset</a>
+            <a href="" class="print-btn">Print</a>
+        </div>
+       </div>
+
+    </div>
+</body>
+</html>
