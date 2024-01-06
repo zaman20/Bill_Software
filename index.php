@@ -9,11 +9,11 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <form action="">
+            <form action="Model/login.php">
                 <label for="">User Name: </label>
-                <input type="text" name="" id="">
+                <input type="text" name="user_name" id="">
                 <label for="">Password: </label>
-                <input type="password">
+                <input type="password" name="password">
                 <input type="submit" value="Login">
             </form>
         </div>

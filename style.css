@@ -16,6 +16,7 @@
    padding-left: 30px;
    padding-top: 50px;
    margin: 0 auto;
+   position: relative;
 }
 .login-box form{
     position: absolute;
