@@ -4,31 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <div class="main-container">
-       <div class="menu">
-        <ul>
-            <li><a href=""><img src="img/new buyer.png" alt=""></a></li>
-            <li><a href=""><img src="img/Update buyer.png" alt=""></a></li>
-            <li><a href=""><img src="img/buyer Details.png" alt=""></a></li>
-            <li><a href=""><img src="img/delete buyer.png" alt=""></a></li>
-            <li><a href=""><img src="img/new product.png" alt=""></a></li>
-            <li><a href=""><img src="img/update product.png" alt=""></a></li>
-            <li><a href=""><img src="img/details product.png" alt=""></a></li>
-            <li><a href=""><img src="img/delete product.png" alt=""></a></li>
-            <li><a href=""><img src="img/logout.png" alt=""></a></li>
-        </ul>
-       </div>
+       <?php include('menu.php');?>
 
        <div class="form-wrapper">
         <div class="title">
-            <img src="img/New buyer ani.gif" alt=""> 
-            <h2> New Buyer</h2>
+            <img src="../img/New buyer ani.gif" alt=""> 
         </div>
       
-        <form action="">
+        <form action="../model/addBuyer.php" method="post">
             <label for="">Name: </label><input type="text"> <br>
             <label for="">Contact: </label><input type="number"> <br>
             <label for="">Email: </label><input type="email"> <br>
@@ -41,6 +28,8 @@
             <input type="submit" value="Save">
             <input type="reset">
         </form>
+
+        <?php include('notice.php');?>
        </div>
 
     </div>

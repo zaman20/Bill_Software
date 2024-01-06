@@ -9,13 +9,15 @@
 <body>
     <div class="container">
         <div class="login-box">
-            <form action="Model/login.php">
+            <form action="model/login.php" method="post">
                 <label for="">User Name: </label>
-                <input type="text" name="user_name" id="">
+                <input type="text" name="uname" id="">
                 <label for="">Password: </label>
-                <input type="password" name="password">
+                <input type="password" name="pass">
                 <input type="submit" value="Login">
             </form>
+
+            <?php include('view/notice.php');?>
         </div>
     </div>
 </body>
