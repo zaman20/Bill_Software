@@ -50,16 +50,14 @@
                         $name  = $result['1'];
                         $rate  = $result['2'];
                 ?>
-                 <form action="" method="">
+                 
                     <label for="">Name</label> <input type="text" name="name" value="<?php echo $name?>">
-                    <label for="">Rate</label> <input type="text" name="rate" value="<?php echo $name?>">
+                    <label for="">Rate</label> <input type="text" name="rate" value="<?php echo $rate?>">
                     <label for="">Quantity</label> <input type="text" name="qty">
-                    <input type="submit" value="Add">
-                </form>
+                    <button class="add-btn">Add</button>
+                
             </div>
          
-
-        <div class="empty-border"></div>
 
         <?php
             }
@@ -76,7 +74,8 @@
 
         <div class="empty-border"></div>
         <div class="queue-list">
-            <table>
+            <ol></ol>
+            <table >
                 <tr>
                     <th>SL</th>
                     <th>Name</th>
@@ -85,20 +84,11 @@
                     <th>Total</th>
                     <th>Action</th>
                 </tr>
-                <tr>
-                    <td>01</td>
-                    <td>Seven Up</td>
-                    <td>120</td>
-                    <td>3 </td>
-                    <td>360</td>
-                    <td>
-                        <a href="" class="dlt-btn">Remove</a>
-                    </td>
-                </tr>
+              
             </table>
         </div>
         <div class="button-queue">
-            <label for="">Total Amount:</label><input type="text" name="" id="">
+            <label for="">Total Amount:</label><input type="text" name="" id="totalBox">
             <label for="">Pay Amount:</label><input type="text" name="" id="">
             <label for="">Return Amount:</label><input type="text" name="" id="">
             
@@ -110,5 +100,9 @@
        </div>
 
     </div>
+    
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/scripts.js"></script>
 </body>
 </html>
