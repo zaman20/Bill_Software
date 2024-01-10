@@ -8,6 +8,7 @@
         <li><a title="Update Product" href="updateproduct.php"><img src="../img/update product.png" alt=""></a></li>
         <li><a title="Details Product" href="productdetails.php"><img src="../img/details product.png" alt=""></a></li>
         <li><a title="Delete Product" href="deleteproduct.php"><img src="../img/delete product.png" alt=""></a></li>
+        <li><a title="Bill Making" href="billmaking.php"><img src="../img/billing.png" alt=""></a></li>
         <li><a title="" href=""><img src="../img/logout.png" alt=""></a></li>
     </ul>
 </div>

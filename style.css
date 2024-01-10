@@ -154,3 +154,10 @@ a.dlt-btn {
 .print-btn{
     background:blue;
 }
+
+.input-box {
+    display: flex;
+}
+form.product-search-form {
+    margin-right: 5px;
+}
