@@ -16,12 +16,12 @@
         </div>
       
         <form action="../model/addBuyer.php" method="post">
-            <label for="">Name: </label><input type="text"> <br>
-            <label for="">Contact: </label><input type="number"> <br>
-            <label for="">Email: </label><input type="email"> <br>
-            <label for="">Address: </label><input type="text"> <br>
+            <label for="">Name: </label><input type="text" name="name"> <br>
+            <label for="">Contact: </label><input type="number" name="contact"> <br>
+            <label for="">Email: </label><input type="email" name="email"> <br>
+            <label for="">Address: </label><input type="text" name="address"> <br>
             <label for="">Gender</label>
-            <select name="" id="">
+            <select name="gender" id="">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select> <br>
