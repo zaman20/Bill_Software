@@ -141,12 +141,16 @@ a.dlt-btn {
     margin-right: 11px;
     margin-left: 30px;
 }
-.save-btn, .reset-btn, .print-btn{
+.save-btn,.print-btn{
     background:green;
     padding: 5px 10px;
     text-decoration: none;
     color: white;
     margin: 1%;
+   
+}
+.print-btn:hover, .save-btn:hover{
+    cursor: pointer;
 }
 .reset-btn{
     background:red;
@@ -166,4 +170,9 @@ button.add-btn {
     margin-left: 10px;
     height: 30px;
     width: 85px;
+}
+@media print{
+    .menu{display:none;}
+    .form-wrapper{top: 10px;left: 40px;}
+    .print-btn{display: none;}
 }
