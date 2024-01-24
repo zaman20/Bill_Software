@@ -102,15 +102,21 @@
                             $id  = $result['0'];
                             $name  = $result['1'];
                             $rate  = $result['2'];
+                            $active = $result['4'];
                     ?>
                     <form action="../model/addCart.php" method="post">
                         <label for="">Name</label>
                         <input type="text" name="name" value="<?php echo $name?>">
                         <label for="">Rate</label>
                         <input type="text" name="rate" value="<?php echo $rate?>">
+                        
                         <label for="">Quantity</label>
+                        <?php if($active == 'Yes'){?>
                         <input type="text" name="qty">
                         <input type="submit" value="Add">
+                        <?php }else{?>
+                            <label for="">Stock Out!</label>
+                        <?php }?>
                     </form>
                     
                 </div>
