@@ -14,6 +14,7 @@
         $qtys = explode(',',$row['4']);
         $prices =explode(',',$row['5']);
         $num = $row['7'];
+        $date = $row['8'];
     }
     
 ?>

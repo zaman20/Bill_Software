@@ -29,8 +29,10 @@
         </div>
             <?php include('../model/slip.php');?>
             <div style="margin-bottom:5px;">
+                <label for="">Bill No:# <?php echo $id?> </label> <br>
                 <label for="">Customer-Name: <?php echo $name?> | </label>
-                <label for="">Phone: <?php echo $contact?></label>
+                <label for="">Phone: <?php echo $contact?></label> <br>
+                <label for="">Date: <?php echo $date?></label>
             </div>
             <table>
                 <tr>
