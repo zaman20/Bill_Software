@@ -9,6 +9,22 @@ $(document).ready(function(){
         }
     });
 
+    //cart-dlt-btn
+    $('.cart-dlt-btn').on('click',function(){
+        if(confirm('Are you sure want to delete this?')){
+            let id = $(this).data('id');
+            let pid = $(this).data('pid');
+            let stock = $(this).data('stock');
+
+            $('#set_id').val(id);
+            $('#set_pid').val(pid);
+            $('#set_stock').val(stock);
+            $('#deleteForm').submit();
+        }else{
+            return false;
+        }
+    });
+
     $('.print-btn').on('click',function(){
         window.print();
     });

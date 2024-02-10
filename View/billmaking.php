@@ -19,7 +19,8 @@
             <li><a title="Details Product" href="productdetails.php"><img src="../img/details product.png" alt=""></a></li>
             <li><a title="Delete Product" href="deleteproduct.php"><img src="../img/delete product.png" alt=""></a></li>
             <li class="active"><a title="Bill Making" href="billmaking.php"><img src="../img/billing.png" alt=""></a></li>
-            <li><a title="Log Out" href="../index.php"><img src="../img/logout.png" alt=""></a></li>
+            <li ><a title="History" href="history.php"><img src="../img/logout.png" alt=""></a></li>
+            <li><a title="Log Out" href="../index.php"><img src="../img/close.png" alt=""></a></li>
         </ul>
     </div>
 
@@ -88,34 +89,39 @@
                 <!-- search form -->
                 <div class="input-box">
                     <form action="" method="post" class="product-search-form">
-                        <label for="">Product ID</label> <input type="text" name="key">
+                        <label for="">Product Name:</label> <input type="text" name="key">
                     </form>
                 
                     <?php 
                         include('../model/db.php');
                         if(isset($_POST['key'])){
                         $key = $_POST['key'];
-                        $sql = "SELECT * FROM products WHERE id = '$key' LIMIT 1 ";
+                        $sql = "SELECT * FROM products WHERE name LIKE '%$key%' ";
                         $query = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($query)>0){
                             $result = mysqli_fetch_row($query);
                             $id  = $result['0'];
                             $name  = $result['1'];
                             $rate  = $result['2'];
-                            $active = $result['4'];
+                            $stock = $result['3'];
+                            $active = $result['5'];
                     ?>
                     <form action="../model/addCart.php" method="post">
                         <label for="">Name</label>
                         <input type="text" name="name" value="<?php echo $name?>">
                         <label for="">Rate</label>
                         <input type="text" name="rate" value="<?php echo $rate?>">
-                        
-                        <label for="">Quantity</label>
-                        <?php if($active == 'Yes'){?>
-                        <input type="text" name="qty">
+                        <label for="">Quantity:</label>
+
+                        <?php if($active == 'Yes' || $stock>0){?>
+
+                        <input type="text" name="qty" placeholder="Stock:<?php echo $stock;?>pcs">
+                        <input type="hidden" name="pid" value="<?php echo $id;?>">
+                        <input type="hidden" name="stock" value="<?php echo $stock;?>">
                         <input type="submit" value="Add">
+
                         <?php }else{?>
-                            <label for="">Stock Out!</label>
+                            <label for="" style="color:red; font-size:20px;font-weight:bold;">Stock Out!</label>
                         <?php }?>
                     </form>
                     
@@ -170,7 +176,9 @@
                         <td><?php echo $row['rate']?></td>
                         <td><?php echo $row['qty']?></td>
                         <td><?php echo $row['total']?></td>
-                        <td><a href="#" data-id="<?php echo $row['id']?>" class="dlt-btn">Delete</a></td>
+                        <td>
+                            <a href="#" data-pid="<?php echo $row['p_id']?>" data-stock="<?php echo $row['stock']?>" data-id="<?php echo $row['id']?>" class="cart-dlt-btn">Delete</a>
+                        </td>
                     </tr>
                     <?php }}?>
                 
@@ -178,9 +186,9 @@
             </div>
             
             <div class="button-queue">
-                <label for="">Total Amount:</label><input type="text"  id="totalBox" value="<?php echo $subtotal;?>">
-                <label for="">Pay Amount:</label><input type="text" id="payBox">
-                <label for="">Return Amount:</label><input type="text"  id="returnBox">
+                <label for="">Total Amount:</label><input type="text"  id="totalBox" value="<?php echo $subtotal;?>">  <br>
+                <label for="">Pay Amount:</label><input type="text" id="payBox"> <br>
+                <label for="">Return Amount:</label><input type="text"  id="returnBox"> <br>
                 
                 <div class="empty-border"></div>
                 <form action="../model/makeInvoice.php" method="post" id="invoiceForm">
@@ -203,6 +211,8 @@
 
     <form action="../model/deleteCart.php" method="post" id="deleteForm">
         <input type="hidden" name="get_id" id="set_id">
+        <input type="hidden" name="get_pid" id="set_pid">
+        <input type="hidden" name="get_stock" id="set_stock">
     </form>
 
     <script src="../js/jquery.js"></script>

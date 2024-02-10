@@ -19,7 +19,8 @@
             <li class="active"><a title="Details Product" href="productdetails.php"><img src="../img/details product.png" alt=""></a></li>
             <li><a title="Delete Product" href="deleteproduct.php"><img src="../img/delete product.png" alt=""></a></li>
             <li><a title="Bill Making" href="billmaking.php"><img src="../img/billing.png" alt=""></a></li>
-            <li><a title="Log Out" href="../index.php"><img src="../img/logout.png" alt=""></a></li>
+            <li><a title="History" href="history.php"><img src="../img/logout.png" alt=""></a></li>
+            <li><a title="Log Out" href="../index.php"><img src="../img/close.png" alt=""></a></li>
         </ul>
     </div>
 
@@ -36,6 +37,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Rate</th>
+                    <th>Stock</th>
                     <th>Description</th>
                     <th>Active</th>
                 </tr>
@@ -45,6 +47,7 @@
                     <td><?php echo $row['id']?></td>
                     <td><?php echo $row['name']?></td>
                     <td><?php echo $row['rate']?></td>
+                    <td><?php echo $row['stock']?></td>
                     <td><?php echo $row['description']?></td>
                     <td><?php echo $row['active']?></td>
                 </tr>

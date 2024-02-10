@@ -19,8 +19,8 @@
             <li><a title="Details Product" href="productdetails.php"><img src="../img/details product.png" alt=""></a></li>
             <li><a title="Delete Product" href="deleteproduct.php"><img src="../img/delete product.png" alt=""></a></li>
             <li><a title="Bill Making" href="billmaking.php"><img src="../img/billing.png" alt=""></a></li>
-            <li><a title="Log Out" href="../index.php"><img src="../img/logout.png" alt=""></a></li>
-        </ul>
+            <li><a title="History" href="history.php"><img src="../img/logout.png" alt=""></a></li>
+            <li><a title="Log Out" href="../index.php"><img src="../img/close.png" alt=""></a></li>
     </div>
 
        <div class="form-wrapper">

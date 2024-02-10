@@ -118,7 +118,7 @@ table {
     background-color: #dddddd;
   }
 
-a.dlt-btn {
+a.dlt-btn , .cart-dtl-btn{
     background: orange;
     padding: 5px;
     text-decoration: none;
