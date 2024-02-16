@@ -10,17 +10,17 @@
     <div class="main-container">
     <div class="menu">
         <ul>
-            <li><a title="New Buyer" href="newbuyer.php"><img src="../img/new buyer.png" alt=""></a></li>
-            <li><a title="Update Buyer" href="updatebuyer.php"><img src="../img/Update buyer.png" alt=""></a></li>
-            <li><a title="Buyer Details" href="buyerdetails.php"><img src="../img/buyer Details.png" alt=""></a></li>
-            <li><a title="Delete Buyer" href="deletebuyer.php"><img src="../img/delete buyer.png" alt=""></a></li>
-            <li><a title="New Product" href="newproduct.php"><img src="../img/new product.png" alt=""></a></li>
-            <li><a title="Update Product" href="updateproduct.php"><img src="../img/update product.png" alt=""></a></li>
-            <li><a title="Details Product" href="productdetails.php"><img src="../img/details product.png" alt=""></a></li>
-            <li><a title="Delete Product" href="deleteproduct.php"><img src="../img/delete product.png" alt=""></a></li>
-            <li class="active"><a title="Bill Making" href="billmaking.php"><img src="../img/billing.png" alt=""></a></li>
-            <li ><a title="History" href="history.php"><img src="../img/logout.png" alt=""></a></li>
-            <li><a title="Log Out" href="../index.php"><img src="../img/close.png" alt=""></a></li>
+            <li><a title="New Buyer" href="newbuyer.php"><img src="../img/new buyer.png" alt=""><br> New Buyer</a></li>
+            <li><a title="Update Buyer" href="updatebuyer.php"><img src="../img/Update buyer.png" alt=""><br>Buyer Update</a></li>
+            <li><a title="Buyer Details" href="buyerdetails.php"><img src="../img/buyer Details.png" alt=""><br>Buyer Details</a></li>
+            <li><a title="Delete Buyer" href="deletebuyer.php"><img src="../img/delete buyer.png" alt=""><br>Delete Buyer</a><br></li>
+            <li><a title="New Product" href="newproduct.php"><img src="../img/new product.png" alt=""><br>New Product</a></li>
+            <li><a title="Update Product" href="updateproduct.php"><img src="../img/update product.png" alt=""><br>Update Product</a></li>
+            <li><a title="Details Product" href="productdetails.php"><img src="../img/details product.png" alt=""><br>Details Product</a></li>
+            <li><a title="Delete Product" href="deleteproduct.php"><img src="../img/delete product.png" alt=""><br>Delete Product</a></li>
+            <li class="active"><a title="Bill Making" href="billmaking.php"><img src="../img/billing.png" alt=""><br>Bill Making</a></li>
+            <li ><a title="History" href="history.php"><img src="../img/logout.png" alt=""><br>History</a></li>
+            <li><a title="Log Out" href="../index.php"><img src="../img/close.png" alt=""><br>Logout</a></li>
         </ul>
     </div>
 
@@ -66,7 +66,7 @@
                                     echo "Not Found Any Contact!Please Add";?><br>
                             <form action="../model/addBuyer2.php" method="post">
                                 <label for="">Name: </label><input type="text" name="name"> <br>
-                                <label for="">Contact: </label><input type="number" name="contact"> <br>
+                                <label for="">Contact: </label><input type="text" name="contact" maxlength="11"> <br>
                                 <label for="">Email: </label><input type="email" name="email"> <br>
                                 <label for="">Address: </label><input type="text" name="address"> <br>
                                 <label for="">Gender</label>
@@ -89,14 +89,14 @@
                 <!-- search form -->
                 <div class="input-box">
                     <form action="" method="post" class="product-search-form">
-                        <label for="">Product Name:</label> <input type="text" name="key">
+                        <label for="">Product Name/Code:</label> <input type="text" name="key">
                     </form>
                 
                     <?php 
                         include('../model/db.php');
                         if(isset($_POST['key'])){
                         $key = $_POST['key'];
-                        $sql = "SELECT * FROM products WHERE name LIKE '%$key%' ";
+                        $sql = "SELECT * FROM products WHERE name LIKE '%$key%' or id = '$key' ";
                         $query = mysqli_query($conn, $sql);
                         if(mysqli_num_rows($query)>0){
                             $result = mysqli_fetch_row($query);
@@ -186,7 +186,7 @@
             </div>
             
             <div class="button-queue">
-                <label for="">Total Amount:</label><input type="text"  id="totalBox" value="<?php echo $subtotal;?>">  <br>
+                <label for="">Total Amount:</label><input type="text"  id="totalBox" value="<?php echo $subtotal;?>"><br>
                 <label for="">Pay Amount:</label><input type="text" id="payBox"> <br>
                 <label for="">Return Amount:</label><input type="text"  id="returnBox"> <br>
                 

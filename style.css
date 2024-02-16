@@ -42,7 +42,7 @@
 }
 .menu ul li{
     display: inline-block;
-    padding: 10px 10px;
+    padding: 10px 4px;
     margin-right: 10px;
 }
 .menu ul li a img{
@@ -55,7 +55,6 @@
 }
 .active{
     background: #1cfe73;
-    border-radius: 35px;
 }
 .form-wrapper{
     background: url(img/billing\ background.png);
